@@ -6,15 +6,15 @@ package Maquinas;
 public class MaqCorte extends Thread implements MaquinaCorte
 {
     Estoque estoque;
-    private char qualidade;
+    private int tipo;
     private char tamanho;
     private int idMaquina;
 
     public MaqCorte(Estoque estoque, int idMaquina)
     {
         this.estoque = estoque;
-        this.qualidade = estoque.getQualidade();
-        this.tamanho = estoque.getTamanho();
+        this.tipo = estoque.demanda.getTipo();
+        this.tamanho = estoque.demanda.getTamanho();
         this.idMaquina = idMaquina;
     }
 

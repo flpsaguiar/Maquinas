@@ -6,35 +6,27 @@ package Maquinas;
 
 public class Estoque
 {
-    Molde moldePequeno = new Molde(1);
-    Molde moldeGrande = new Molde(2);
+    /*
+    No Frills - Tipo 5
+    LowQuality - Tipo 4
+    Hybrid - Tipo 3
+    Differentiation - Tipo 2
+    Focused Differentiation - Tipo 1
+    */
+
+
+    Molde moldePequeno5 = new Molde('P');
+    Molde moldeGrande5 = new Molde('G');
+
+    Molde moldePequeno4 = new Molde('P');
+
+
     Placa placa = new Placa();
+    Demanda demanda = new Demanda();
 
-    private char tamanho;
-    private char qualidade;
-    private char marcacao;
 
-    public void setDemanda(char tamanho, char qualidade, char marcacao)
-    {
-        this.tamanho = tamanho;
-        this.qualidade = qualidade;
-        this.marcacao = marcacao;
-    }
 
-    public char getTamanho()
-    {
-        return this.tamanho;
-    }
 
-    public char getQualidade()
-    {
-        return this.qualidade;
-    }
-
-    public char getMarcacao()
-    {
-        return this.marcacao;
-    }
 
 
 

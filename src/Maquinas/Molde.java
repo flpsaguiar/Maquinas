@@ -5,25 +5,16 @@ package Maquinas;
  */
 public class Molde
 {
-    final int PEQUENO = 1;
-    final int GRANDE = 2;
-    private int tamanho;
+    private char tamanho;
     private int quantidade;
 
-    public Molde(int tamanho)
+    public Molde(char tamanho)
     {
-        if(tamanho != 1 && tamanho != 2)
-        {
-            System.out.println("Tamanho incorreto.");
-        }
-        else
-        {
-            this.tamanho = tamanho;
-        }
+        this.tamanho = tamanho;
         this.quantidade = 0;
     }
 
-    public int getTamanho()
+    public char getTamanho()
     {
         return tamanho;
     }
