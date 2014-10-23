@@ -13,7 +13,7 @@ public class Main
 
         estoque.demanda.setDemanda(30, 'P', 5, '1');
 
-        estoque.placa.setQtdProduzir(3);
+//        estoque.placa.setQtdProduzir(3);
 
         MaqMolde maqMolde1 = new MaqMolde(estoque, 1);
         MaqMolde maqMolde2 = new MaqMolde(estoque, 2);

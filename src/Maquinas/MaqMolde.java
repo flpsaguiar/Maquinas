@@ -32,7 +32,7 @@ public class MaqMolde extends Thread implements MaquinaMolde {
     }
 
     public int moldePequeno(int qtdeChapas, int tipo) {
-        //estoque.placa.setQtdProduzir(qtdeChapas);
+        estoque.placa.setQtdProduzir(qtdeChapas);
         while (estoque.placa.getPlaca() == 1) {
             if(tipo == 5) {
                 estoque.moldePequeno5.incQuantidade();
@@ -61,4 +61,3 @@ public class MaqMolde extends Thread implements MaquinaMolde {
         return 1;
     }
 }
-
