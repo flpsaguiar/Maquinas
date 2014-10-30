@@ -1,5 +1,9 @@
 package Maquinas;
 
+import Socket.Client;
+
+import java.io.IOException;
+
 /**
  * Created by Felipe Aguiar on 06/10/2014.
  */
@@ -20,15 +24,24 @@ public class MaqMolde extends Thread implements MaquinaMolde {
     }
 
     public void run() {
-        if(this.tamanho == 'P') {
-            System.out.println("Moldes Produzidos: " + moldePequeno(2, this.tipo));
-        }
-        else if(this.tamanho == 'G') {
-            System.out.println("Moldes Produzidos: " + moldeGrande(1, this.tipo));
-        }
-        else {
-            System.out.println("Tamanho Indisponível");
-        }
+		Client client = new Client();
+		client.setPedido("1000?chapa?COMPRA?branca?1?0?1000");
+		try {
+			client.abreConn();
+			String resposta = client.getResposta();
+			System.out.println(resposta);
+			if(this.tamanho == 'P') {
+				System.out.println("Moldes Produzidos: " + moldePequeno(2, this.tipo));
+			}
+			else if(this.tamanho == 'G') {
+				System.out.println("Moldes Produzidos: " + moldeGrande(1, this.tipo));
+			}
+			else {
+				System.out.println("Tamanho Indisponível");
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
     }
 
     public int moldePequeno(int qtdeChapas, int tipo) {
